@@ -27,11 +27,11 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
-        python-version: "3.7"
+        python-version: "3.10"
 
     - name: Install dependencies
       run: |
-        pip install dbt
+        pip install dbt-snowflake
         dbt deps
 
     # Comandos relacionados con dbt aquí - usa --target prod/dev para ejecutar en entornos específicos
