@@ -9,7 +9,7 @@ on:
     branches:
       # Ejecutar en cada empuje a la rama master
       - master
-
+  workflow_dispatch:
 env:
   DBT_PROFILES_DIR: ./
   DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
