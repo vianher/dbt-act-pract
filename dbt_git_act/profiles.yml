@@ -1,0 +1,13 @@
+dbt_git_act:
+  outputs:
+    dev:
+      account: tza71811
+      database: AIRBNB
+      password: "{{ env_var('DBT_PASSWORD') }}" 
+      role: transform
+      schema: dev
+      threads: 32
+      type: snowflake
+      user: "{{ env_var('DBT_USER') }}"
+      warehouse: COMPUTE_WH
+  target: dev
