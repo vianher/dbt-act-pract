@@ -32,8 +32,11 @@ jobs:
     - name: Install dependencies
       run: |
         pip install dbt-snowflake
+        cd dbt_git_act
         dbt deps
 
     # Comandos relacionados con dbt aquí - usa --target prod/dev para ejecutar en entornos específicos
     - name: Run dbt models
-      run: dbt run
+      run: |
+        cd dbt_git_act
+        dbt run
