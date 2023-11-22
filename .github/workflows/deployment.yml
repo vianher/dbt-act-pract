@@ -8,7 +8,7 @@ on:
   push:
     branches:
       # Ejecutar en cada empuje a la rama master
-      - master
+      - slack-notification
   workflow_dispatch:
 env:
   DBT_PROFILES_DIR: ./
