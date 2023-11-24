@@ -10,6 +10,8 @@ on:
       # Ejecutar en cada empuje a la rama master
       - slack-notification
   workflow_dispatch:
+  check_run:
+    types: [rerequested, completed]
 env:
   DBT_PROFILES_DIR: ./
   DBT_USER: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
