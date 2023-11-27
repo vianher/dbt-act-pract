@@ -54,3 +54,17 @@ jobs:
         from: "victor.hernandez@clouddataconsulting.com"
         to: "victor.hernandez@clouddataconsulting.com"
         start_tls: true
+    - name: Notify on Failure
+      if: failure()
+      uses: dawidd6/action-send-mail@v2
+      with:
+        server_address: ${{ secrets.SMTP_SERVER }}
+        server_port: ${{ secrets.SMTP_PORT }}
+        username: ${{ secrets.SMTP_USERNAME }}
+        password: ${{ secrets.SMTP_PASSWORD }}
+        subject: "GitHub Actions Notification - Failure"
+        body: "El trabajo en GitHub Actions ha fallado. Revisa el flujo de trabajo para obtener más detalles."
+        from: "victor.hernandez@clouddataconsulting.com"
+        to: "victor.hernandez@clouddataconsulting.com"
+        start_tls: true
+    
