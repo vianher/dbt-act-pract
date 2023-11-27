@@ -42,3 +42,15 @@ jobs:
       run: |
         cd dbt_git_act
         dbt run
+     - name: Notify by Email
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "GitHub Actions Notification"
+          body: "Your GitHub Actions workflow has completed."
+          from: "victor.hernandez@clouddataconsulting.com"
+          to: "victor.hernandez@clouddataconsulting.com"
+          start_tls: true
