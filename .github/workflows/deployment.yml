@@ -54,7 +54,7 @@ jobs:
         from: "victor.hernandez@clouddataconsulting.com"
         to: "victor.hernandez@clouddataconsulting.com"
         start_tls: true
-    - name: Notify on Failure
+    - name: Notify by on Failure
       if: failure()
       uses: dawidd6/action-send-mail@v2
       with:
@@ -67,4 +67,11 @@ jobs:
         from: "victor.hernandez@clouddataconsulting.com"
         to: "victor.hernandez@clouddataconsulting.com"
         start_tls: true
-    
+    - name: Notify on Success
+        if: success()
+        uses: ilteoood/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          channel: "#aubuchon-dataops"  # Replce for the channel
+          text: "Your GitHub Actions workflow has completed."
