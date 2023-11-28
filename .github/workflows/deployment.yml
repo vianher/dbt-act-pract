@@ -70,7 +70,7 @@ jobs:
         start_tls: true
     - name: Notify on Success
       if: success()
-      uses: ilteoood/action-slack-notify@v2
+      uses: rtCamp/action-slack-notify@v2
       with:
         channel: "#aubuchon-dataops"  # Replce for the channel
         text: "Your GitHub Actions workflow has completed."
