@@ -78,4 +78,4 @@ jobs:
         text: |
             The GitHub Actions workflow was successful.
             Everything is working as expected.
-      
+            Message: "The GitHub Actions workflow was successful."
