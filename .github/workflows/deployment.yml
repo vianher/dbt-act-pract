@@ -75,5 +75,7 @@ jobs:
         SLACK_CHANNEL: "#aubuchon-dataops"  # Replace with your channel name
       with:
         status: success
-        text: "The GitHub Actions workflow was successful. Good job!"
+        text: |
+            The GitHub Actions workflow was successful.
+            Everything is working as expected.
       
