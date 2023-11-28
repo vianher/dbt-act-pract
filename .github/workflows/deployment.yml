@@ -16,8 +16,7 @@ env:
   DBT_PROFILES_DIR: ./
   DBT_USER: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
   DBT_PASSWORD: ${{ secrets.DBT_SNOWFLAKE_PW }}
-  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
+  
 jobs:
   schedule_dbt_run:
     name: schedule_dbt_run
@@ -71,6 +70,10 @@ jobs:
     - name: Notify on Success
       if: success()
       uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: "#aubuchon-dataops"  # Replace with your channel name
       with:
-        channel: "#aubuchon-dataops"  # Replce for the channel
-        text: "Your GitHub Actions workflow has completed."
+        status: success
+        text: "The GitHub Actions workflow was successful. Good job!"
+      
