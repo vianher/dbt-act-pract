@@ -82,4 +82,10 @@ jobs:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: "#aubuchon-dataops"  # Replace with your channel name
         SLACK_MESSAGE: 'The GitHub Actions workflow failed.'
-        SLACK_TITLE: failure()  
+        SLACK_TITLE: failure
+    - name: Notify on Success Google chat
+      if: success()
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{
+        "text": "The GitHub Actions workflow was successful. Everything is working as expected."
+        }' ${{ secrets.GOOGLE_CHAT_WEBHOOK }}    
