@@ -73,9 +73,6 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: "#aubuchon-dataops"  # Replace with your channel name
-      with:
-        status: success
-        text: |
-            The GitHub Actions workflow was successful.
-            Everything is working as expected.
-            Message: "The GitHub Actions workflow was successful."
+        SLACK_MESSAGE: 'The GitHub Actions workflow was successful.'
+        SLACK_TITLE: Success
+      
