@@ -88,4 +88,4 @@ jobs:
       run: |
         curl -X POST -H "Content-Type: application/json" -d '{
         "text": "The GitHub Actions workflow was successful. Everything is working as expected."
-        }''${{ secrets.GOOGLE_CHAT_WEBHOOK }}'    
+        }' 'https://chat.googleapis.com/v1/spaces/AAAAhv8Hmgw/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=wwYz39gzC1r8MIAVn1Ypa7gQxVCJHL-US__rXBkXDpg'    
