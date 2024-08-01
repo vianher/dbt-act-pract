@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 env:
   DBT_PROFILES_DIR: ./
-  DBT_USER: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
-  DBT_PASSWORD: ${{ secrets.DBT_SNOWFLAKE_PW }}
+  DBT_USER: ${{ secrets.SNOWFLAKE_USER }}
+  DBT_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
 
 jobs:
   schedule_dbt_run:
