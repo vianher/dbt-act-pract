@@ -3,11 +3,11 @@ dbt_git_act:
     dev:
       account: tza71811
       database: AIRBNB
-      password: "{{ env_var('DBT_PASSWORD') }}" 
-      role: transform
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}" 
+      role: ACCOUNTADMIN
       schema: dev
       threads: 32
       type: snowflake
-      user: "{{ env_var('DBT_USER') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
       warehouse: COMPUTE_WH
   target: dev
