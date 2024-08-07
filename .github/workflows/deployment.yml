@@ -38,7 +38,7 @@ jobs:
       env:
         TAILSCALE_AUTH_KEY: ${{ secrets.TAILSCALE_AUTH_KEY }}
       run: |
-        sudo tailscale up --authkey=${{ secrets.TAILSCALE_AUTH_KEY }} --exit-node=100.76.205.52
+        sudo tailscale up --authkey=${{ secrets.TAILSCALE_AUTH_KEY }} --exit-node=52.33.61.139
 
     - name: Install dependencies
       run: |
